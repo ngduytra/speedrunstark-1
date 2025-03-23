@@ -19,7 +19,7 @@ export const ContractWriteMethods = ({
 
   const functionsToDisplay = getFunctionsByStateMutability(
     (deployedContractData.abi || []) as Abi,
-    "external",
+    "external"
   ).map((fn) => {
     return {
       fn,
@@ -29,6 +29,10 @@ export const ContractWriteMethods = ({
   if (!functionsToDisplay.length) {
     return <>No write methods</>;
   }
+
+  console.log("functionsToDisplay", functionsToDisplay);
+  console.log("deployedContractData", deployedContractData);
+  console.log("onChange: ", onChange);
 
   return (
     <>
